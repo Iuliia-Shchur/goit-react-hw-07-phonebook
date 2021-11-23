@@ -7,10 +7,6 @@ function Filter() {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
 
-  // const onFilterChange =(e) => {
-  // dispatch(actions.filterContact(e.currentTarget.value));
-  // }
-
   return (
     <label className={s.label}>
       Find contacts by name
@@ -19,14 +15,13 @@ function Filter() {
         type="text"
         name="name"
         value={filter}
-        onChange={(e) => dispatch(filterChange(e.target.value))} //можно вынести в отдельную функцию, она вверху
+        onChange={(e) => dispatch(filterChange(e.target.value))}
       />
     </label>
   );
 }
 
 Filter.propTypes = {
-  // onFilterChange: PropTypes.func,
   filter: PropTypes.string,
 };
 
